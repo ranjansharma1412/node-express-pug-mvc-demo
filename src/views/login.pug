@@ -1,0 +1,25 @@
+html 
+    head 
+        link(rel='stylesheet', type='text/css', href='/styles.css')
+    body(onload="showToast()").root
+        script.
+            function showToast() {
+               Snackbar.show({text: "You register successfully"})
+            }
+
+        form(action="")
+            div.container 
+                h1 Login 
+                div.inputContainer
+                    input(type="email", name="email" placeholder="Enter email" required).input-field
+
+                div.inputContainer
+                    input(type="password", name="password" placeholder="Enter password" required).input-field
+
+                div.inputContainer(style={"margin-top":"70px"})
+                    button(type="submit").button-style Sign In
+
+                div.inputContainer
+                    p if you don't have account?
+                        a(href="/register")   Sign Up
+

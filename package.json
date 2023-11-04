@@ -10,6 +10,7 @@
   "dependencies": {
     "express": "^4.18.2",
     "mongoose": "^8.0.0",
+    "node-snackbar": "^0.1.16",
     "pug": "^3.0.2"
   },
   "devDependencies": {

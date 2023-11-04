@@ -1,3 +1,40 @@
 html 
-    body 
-        h1  Welcome to pug"
+    head 
+        link(rel='stylesheet', type='text/css', href='/styles.css')
+        script(type="text/javascript" src="/SnackBar-master/dist/snackbar.min.js")
+        link(rel="stylesheet" type="text/css" href="/SnackBar-master/dist/snackbar.min.css")
+    body.root
+        form(action="/api/user" id="register-form" method="post")
+            div.container 
+                h1 Register 
+                p Please fill in the form to create account.
+                hr
+                div.inputContainer
+                    input(type="text", name="name" placeholder="Enter name" required).input-field
+
+                div.inputContainer
+                    input(type="email", name="email" placeholder="Enter email" required).input-field
+
+                div.inputContainer
+                    input(type="password", name="password" placeholder="Enter password" required).input-field
+
+                div.inputContainer
+                    input(type="password", name="re-enter-password" placeholder="Re enter password" required).input-field
+
+                div.inputContainer(style={"margin-top":"70px"})
+                    button(type="submit" onclick="showToast(event)").button-style Sign up
+                    script.
+                        function showToast(event) {
+                            event.preventDefault();
+                            Snackbar.show({text: "You register successfully"})
+                            setTimeout(()=>{
+                                document.getElementById('register-form').submit();  
+                            },2000)
+                        }
+
+                div.inputContainer
+                    p if you have already an account?
+                        a(href="/login")   Sign In
+
+
+        
